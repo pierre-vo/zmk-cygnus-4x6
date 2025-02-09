@@ -20,6 +20,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: lotus58_left
+    shield: cygnus4x6_left
   - board: nice_nano_v2
-    shield: lotus58_right
+    shield: cygnus4x6_right
