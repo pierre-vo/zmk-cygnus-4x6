@@ -53,3 +53,20 @@
                 };
         };
 };
+
+
+// // https://zmk.dev/docs/keymaps/conditional-layers
+// / {
+//     conditional_layers {
+//         compatible = "zmk,conditional-layers";
+//         tri_layer {
+//             if-layers = <1 2>;
+//             then-layer = <3>;
+//         };
+//     };
+// };
+// 
+// // https://zmk.dev/docs/features/lighting#enabling-rgb-underglow
+// &led_strip {
+//     chain-length = <1>;
+// };
