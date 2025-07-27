@@ -7,9 +7,15 @@ default:
 test:
   echo {{invocation_directory()}}
 
+podman-rm-vol:
+  podman volume rm zmk-config
+  podman volume rm zmk-modules
+
 podman-setup-vol:
   podman volume create --driver local -o o=bind -o type=none -o device="{{invocation_directory()}}" zmk-config
   podman volume create --driver local -o o=bind -o type=none -o device="{{invocation_directory()}}/../zmk/app/keymap-module/modules" zmk-modules
+
+podman-vol: podman-rm-vol podman-setup-vol
 
 podman-setup-cont:
   podman build -t zmkbuild -f Dockerfile {{invocation_directory()}}/../zmk/.devcontainer

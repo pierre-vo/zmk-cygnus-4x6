@@ -6,14 +6,18 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     # - name: caksoylar
     #   url-base: https://github.com/caksoylar
-
+    - name: pierre-vo
+      url-base: https://github.com/pierre-vo
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 147c340c6e8d377304acfdd64dc86cf83ebdfef2
       import: app/west.yml
     # - name: zmk-rgbled-widget 
     #   remote: caksoylar
     #   revision: main
+    - name: zmk-dongle-screen
+      remote: pierre-vo
+      revision: main
   self:
     path: config

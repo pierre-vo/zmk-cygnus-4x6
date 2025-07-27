@@ -20,8 +20,18 @@
 ---
 include:
   - board: nice_nano_v2
+    shield: cygnus_dongle dongle_screen
+    cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000
+    snippet: zmk-usb-logging
+    artifact-name: cygnus-dongle-screen
+  - board: nice_nano_v2
     shield: cygnus_left
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: cygnus-dongle-left
   - board: nice_nano_v2
     shield: cygnus_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
+    artifact-name: cygnus-dongle-right
   - board: nice_nano_v2
     shield: settings_reset
+    artifact-name: cygnus-reset

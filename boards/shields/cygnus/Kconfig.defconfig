@@ -1,4 +1,14 @@
-if SHIELD_CYGNUS_LEFT
+if SHIELD_CYGNUS_LEFT || SHIELD_CYGNUS_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default n
+
+endif
+
+if SHIELD_CYGNUS_DONGLE
 
 config ZMK_KEYBOARD_NAME
     default "Cygnus"
@@ -6,11 +16,18 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-endif
-
-if SHIELD_CYGNUS_LEFT || SHIELD_CYGNUS_RIGHT
-
 config ZMK_SPLIT
     default y
+
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
+# Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
+config BT_MAX_CONN
+    default 6
+
+# Set this to the same number as BT_MAX_CONN
+config BT_MAX_PAIRED
+    default 6
 
 endif
